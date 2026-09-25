@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="104.093" tests="25" skipped="0" failures="1" errors="0">
+<testcase classname="CartPage" name="Verify whether the user is able to add products in cart and checkout" time="5.33">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When User navigates to cart page............................................passed
+Then user should see 1 products.............................................passed
+And User should be able to remove the selected "Sauce Labs Backpack" items..passed
+Then User Clicks the Checkout Button........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CartPage" name="Verify whether the user is able to add two products in cart and checkout" time="1.897">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When user adds "Sauce Labs Bike Light" to the cart..........................passed
+When User navigates to cart page............................................passed
+Then User should be able to view the cart page..............................passed
+Then user should see 2 products.............................................passed
+And User should be able to remove the selected "Sauce Labs Backpack" items..passed
+Then User Clicks the Checkout Button........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CartPage" name="Verify that user can remove an item from the cart" time="2.149">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Bike Light" to the cart..........................passed
+When User navigates to cart page............................................passed
+Then User should be able to view the cart page..............................passed
+Then user should see 1 products.............................................passed
+And User removes the product that was added to cart.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="CartPage" name="Verify that the user can navigate to the product page after adding items to the cart" time="2.51">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When User navigates to cart page............................................passed
+Then User should be able to view the cart page..............................passed
+Then user should see 1 products.............................................passed
+And User Clicks the Continue Button.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Checkout Process" name="Complete a full checkout successfully" time="1.946">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When User navigates to cart page............................................passed
+And I click the checkout button.............................................passed
+And I enter first name "John", last name "Doe", and zip code "12345"........passed
+And I click the continue button.............................................passed
+And I click the finish button...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Checkout Process" name="Checkout shows validation error when no details entered" time="2.278">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When User navigates to cart page............................................passed
+And I click the checkout button.............................................passed
+And I click the continue button without entering details....................passed
+Then I should see the checkout error "Error: First Name is required"........passed
+]]></system-out>
+</testcase>
+<testcase classname="Checkout Process" name="Verify order summary before placing order" time="2.273">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When User navigates to cart page............................................passed
+And I click the checkout button.............................................passed
+And I enter first name "Jane", last name "Smith", and zip code "67890"......passed
+And I click the continue button.............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Successful Login - #1.1" time="2.501">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "standard_user".............................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Labs".......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Successful Login - #1.2" time="2.485">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "error_user"................................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Labs".......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Successful Login - #1.3" time="2.791">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "visual_user"...............................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Labs".......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid password - #1.1" time="2.079">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "standard_user".............................passed
+And User enters valid password "secret_sauces"..............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the login error "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid password - #1.2" time="2.165">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "error_user"................................passed
+And User enters valid password "secret_sauces"..............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the login error "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid password - #1.3" time="1.97">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "visual_user"...............................passed
+And User enters valid password "secret_sauces"..............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the login error "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid username - #1.1" time="2.093">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "Dhivya_001"................................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the login error "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid username - #1.2" time="2.107">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "Aruna_002".................................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the login error "Epic sadface: Username and password do not match any user in this service".passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid Title - #1.1" time="3.088">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "standard_user".............................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Lab"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid Title - #1.2" time="3.194">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "error_user"................................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Lab"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Invalid Title - #1.3" time="3.289">
+<system-out><![CDATA[
+Given User logins to Swag labs website......................................passed
+When User enters valid username "visual_user"...............................passed
+And User enters valid password "secret_sauce"...............................passed
+Then User clicks the Login Button...........................................passed
+And Verify the Page title "Swag Lab"........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Product selection" name="Product selection" time="36.324">
+<failure type="com.microsoft.playwright.TimeoutError" message="Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator(&quot;div.product-tuple-listing&quot;).filter(new Locator.FilterOptions().setHasText(&quot;Bhavyta 3 in 1 Rotary Multi-Functional Peeler&quot;)).first() to be visible
+">
+<![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("div.product-tuple-listing").filter(new Locator.FilterOptions().setHasText("Bhavyta 3 in 1 Rotary Multi-Functional Peeler")).first() to be visible
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at com.microsoft.playwright.Locator.waitFor(Locator.java:5324)
+	at pages.ProductPage.selectProduct(ProductPage.java:21)
+	at stepdefinitions.ProductSteps.selectProduct(ProductSteps.java:17)
+	at ✽.user selects the product "Bhavyta 3 in 1 Rotary Multi-Functional Peeler"(file:///Users/dhivya.m/Documents/IdealProjects/AAPlaywright/src/test/resources/features/product.feature:8)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/progress.js:78:26)
+    at Frame.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/frames.js:619:23)
+    at FrameDispatcher.waitForSelector (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/frameDispatcher.js:106:103)
+    at FrameDispatcher._handleCommand (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (/private/var/folders/br/8yhb0fmn24q1nrzsrzkwwr500000gn/T/playwright-java-16653412047888701374/package/lib/server/dispatchers/dispatcher.js:361:39)
+}
+Call log:
+- waiting for locator("div.product-tuple-listing").filter(new Locator.FilterOptions().setHasText("Bhavyta 3 in 1 Rotary Multi-Functional Peeler")).first() to be visible
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.waitForSelectorImpl(FrameImpl.java:1060)
+	at com.microsoft.playwright.impl.LocatorImpl.lambda$waitForImpl$7(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.LocatorImpl.waitForImpl(LocatorImpl.java:619)
+	at com.microsoft.playwright.impl.LocatorImpl.waitFor(LocatorImpl.java:615)
+	at com.microsoft.playwright.Locator.waitFor(Locator.java:5324)
+	at pages.ProductPage.selectProduct(ProductPage.java:21)
+	at stepdefinitions.ProductSteps.selectProduct(ProductSteps.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:147)
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:162)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:145)
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:226)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:237)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user navigates to Snapdeal............................................passed
+When User selects the product "kitchen products"............................passed
+When user selects the product "Bhavyta 3 in 1 Rotary Multi-Functional Peeler".failed
+]]></system-out>
+</testcase>
+<testcase classname="Products" name="Select a product by Name" time="3.026">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+Then user should see the products title.....................................passed
+When user filters products by "Price (low to high)".........................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Products" name="Select the first product by sort order" time="2.836">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+Then user should see the products title.....................................passed
+When user filters products by "Name (Z to A)"...............................passed
+Then User selects the first product.........................................passed
+And User adds the product to cart...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Products" name="Select the last product by sort order" time="2.838">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+Then user should see the products title.....................................passed
+When user filters products by "Price (low to high)".........................passed
+Then User selects the last product..........................................passed
+And User adds the product to cart...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Products" name="Select multiple products" time="3.399">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+Then user should see the products title.....................................passed
+When user filters products by "Name (Z to A)"...............................passed
+Then User selects the first product.........................................passed
+And User adds the product to cart...........................................passed
+Then User go backs to Product Page..........................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Products" name="Verify whether the user is able to add products and remove products" time="3.111">
+<system-out><![CDATA[
+Given User logins to Swag Labs Portal.......................................passed
+Then user should see the products title.....................................passed
+When user adds "Sauce Labs Backpack" to the cart............................passed
+When user filters products by "Name (Z to A)"...............................passed
+Then User selects the first product.........................................passed
+And User adds the product to cart...........................................passed
+And User removes the product that was added to cart.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="snaphomepage" name="Successful search of products" time="6.267">
+<system-out><![CDATA[
+Given user navigates to Snapdeal............................................passed
+When User selects the product "kitchen products"............................passed
+]]></system-out>
+</testcase>
+</testsuite>

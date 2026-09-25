@@ -1,0 +1,8 @@
+pages/Homepage.class
+stepdefinitions/SnapHomePageSteps.class
+pages/ProductPage.class
+pages/SnapHomePage.class
+pages/PracticeForm.class
+test/PracticeFormTest.class
+utils/TestContext.class
+base/BaseTest.class
